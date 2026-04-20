@@ -2,12 +2,12 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 st.set_page_config(
-    page_title="GEOG 7310 课程演示",
+    page_title="GEOG 7310 Demo",
     page_icon="🌧️",
     layout="wide"
 )
 
-GEE_URL = "https://ninth-physics-489311-d2.projects.earthengine.app/view/hk-rainfall-exposure-sensitivity"
+GEE_URL = "https://ninth-physics-489311-d2.projects.earthengine.app/view/group"
 
 st.markdown(
     """
@@ -121,7 +121,7 @@ st.markdown(
     <div class="hero">
       <div class="hero-kicker">GEOG 7310 · FINAL PROJECT · GEOINT VISUAL APP</div>
       <h1 class="hero-title">Hong Kong Rainfall Exposure Sensitivity Platform</h1>
-      <div class="hero-sub">香港短时强降雨暴露敏感区综合交互平台</div>
+      <div class="hero-sub">Integrated geospatial application for rainfall-exposure sensitivity analysis</div>
     </div>
     """,
     unsafe_allow_html=True
@@ -133,18 +133,18 @@ with left:
     st.markdown(
         """
         <div class="glass">
-          <div class="card-title">Research Overview / 研究概览</div>
+          <div class="card-title">Research Overview</div>
           <p class="section-text">
             This project integrates multi-source Earth observation datasets in Google Earth Engine to identify
             high-sensitivity exposure zones under short-duration extreme rainfall in Hong Kong.
-            <br>本研究在 GEE 上整合多源数据，识别香港短时强降雨情景下的高暴露敏感区域，
-            强调“快速筛查、分区统计、在线交互展示”一体化流程。
+            It emphasizes a complete workflow including rapid screening, district-level statistics,
+            and interactive online visualization.
           </p>
           <div class="meta-grid">
-            <div class="meta-item">Study Area / 研究区<strong>Hong Kong</strong></div>
-            <div class="meta-item">Analysis Period / 时段<strong>2024–2025</strong></div>
-            <div class="meta-item">District Units / 行政区<strong>18</strong></div>
-            <div class="meta-item">Output Layer / 输出<strong>ESI Level 1–5</strong></div>
+            <div class="meta-item">Study Area<strong>Hong Kong</strong></div>
+            <div class="meta-item">Analysis Period<strong>2024–2025</strong></div>
+            <div class="meta-item">District Units<strong>18</strong></div>
+            <div class="meta-item">Output Layer<strong>ESI Level 1–5</strong></div>
           </div>
         </div>
         """,
@@ -154,7 +154,7 @@ with left:
     st.markdown(
         """
         <div class="glass">
-          <div class="card-title">Data Sources / 数据源</div>
+          <div class="card-title">Data Sources</div>
           <ul class="list-neo">
             <li>GPM IMERG V07: rainfall hazard intensity and accumulation</li>
             <li>Dynamic World V1: built-up exposure mask</li>
@@ -169,7 +169,7 @@ with left:
     st.markdown(
         """
         <div class="glass">
-          <div class="card-title">Methodology / 方法框架</div>
+          <div class="card-title">Methodology</div>
           <ul class="list-neo">
             <li>Event Filtering: representative short-duration heavy rainfall events</li>
             <li>Factor Extraction: rainfall, built-up distribution, low-lying terrain</li>
@@ -184,18 +184,18 @@ with left:
     st.markdown(
         """
         <div class="glass">
-          <div class="card-title">Key Findings / 关键发现</div>
+          <div class="card-title">Key Findings</div>
           <p class="section-text">
             District-level rainfall exposure ranges from roughly 2,995 mm to 4,047 mm, revealing strong spatial heterogeneity.
             High exposure clusters in north and central-west sectors, while southeastern sectors are relatively lower.
-            <br>分区统计显示降雨暴露空间差异明显，北部与中西部更高，东南部分区相对较低，为后续 ESI 重点筛查提供依据。
+            This spatial contrast supports subsequent ESI-based screening and district-level prioritization.
           </p>
         </div>
         """,
         unsafe_allow_html=True
     )
 
-    st.link_button("Open Public GEE App / 打开公开GEE应用", GEE_URL, use_container_width=True)
+    st.link_button("Open Public GEE App", GEE_URL, use_container_width=True)
 
     if "projects.earthengine.app" in GEE_URL:
         st.info("Public app link detected. If some map layers fail to load, set all dependent assets to Anyone can read.")
@@ -206,7 +206,7 @@ with right:
     st.markdown(
         """
         <div class="glass" style="padding:14px 14px 10px 14px;">
-          <div class="card-title">Interactive Geospatial Application / 交互地理空间应用</div>
+          <div class="card-title">Interactive Geospatial Application</div>
         </div>
         """,
         unsafe_allow_html=True
@@ -214,3 +214,4 @@ with right:
     st.markdown('<div class="embed-wrap">', unsafe_allow_html=True)
     components.iframe(GEE_URL, height=1060, scrolling=True)
     st.markdown('</div>', unsafe_allow_html=True)
+
